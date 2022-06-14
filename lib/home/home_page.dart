@@ -8,7 +8,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool addPadding = MediaQuery.of(context).size.width > 1400;
+    bool addPadding = MediaQuery.of(context).size.width > 1410;
+    bool isMobileWidth = MediaQuery.of(context).size.width < 480;
+
     return Container(
       color: AppColors.background,
       child: Padding(
@@ -16,9 +18,9 @@ class HomePage extends StatelessWidget {
             ? const EdgeInsets.symmetric(horizontal: 300, vertical: 20)
             : const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         child: Row(
-          children: const [
-            ProfileWidget(),
-            ExperienceWidget(),
+          children: [
+            const ProfileWidget(),
+            isMobileWidth ? Container() : const ExperienceWidget(),
           ],
         ),
       ),

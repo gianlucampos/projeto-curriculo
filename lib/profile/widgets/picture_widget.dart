@@ -7,7 +7,7 @@ class PictureWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.35,
+      height: 350,
       width: double.infinity,
       decoration: BoxDecoration(
         color: const Color(0xff7c94b6),
